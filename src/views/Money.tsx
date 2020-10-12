@@ -24,8 +24,25 @@ const TagsSelection = styled.section`
     margin-top: 8px;
   }
 `
-const NoteSection = styled.section`
-
+const NotesSection = styled.section`
+  background: #f5f5f5;
+  padding: 0 16px;
+  font-size: 14px;
+  > label {
+    display: flex;
+    align-items: center;
+    > span {
+      margin-right: 16px;
+      white-space: nowrap;
+    }
+    > input {
+      display: block;
+      width: 100%;
+      height: 72px;
+      background: none;
+      border: none;
+    }
+  }
 `
 const CategorySelection = styled.section`
 
@@ -46,12 +63,12 @@ function Money() {
         </ol>
         <button>新增标签</button>
       </TagsSelection>
-      <NoteSection>
+      <NotesSection>
         <label>
           <span>备注</span>
-          <input type="text" />
+          <input type="text" placeholder="在这里提交备注" />
         </label>
-      </NoteSection>
+      </NotesSection>
       <CategorySelection>
         <ul>
           <li>支出</li>
