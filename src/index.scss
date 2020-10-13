@@ -45,3 +45,8 @@ body {
   height: 1em;
   display: inline-block;
 }
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
