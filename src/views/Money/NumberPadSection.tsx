@@ -73,18 +73,25 @@ const NumberPadSection: React.FC = () => {
       case '7':
       case '8':
       case '9':
-      case '.':
         if (output === '0') {
           setOutput(text)
         } else {
           setOutput(output + text)
         }
         break;
+      case '.':
+        if (output.indexOf('.') >= 0) { return }
+        setOutput(output + '.')
+        break;
       case '删除':
-        console.log('删除')
+        if (output.length === 1) {
+          setOutput('0')
+        } else {
+          setOutput(output.slice(0, -1))
+        }
         break;
       case '清空':
-        console.log('清空')
+        setOutput('0')
         break;
       case 'OK':
         console.log('确认')
