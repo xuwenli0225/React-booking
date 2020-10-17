@@ -50,3 +50,8 @@ body {
   display: block;
   clear: both;
 }
+.oneline {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
