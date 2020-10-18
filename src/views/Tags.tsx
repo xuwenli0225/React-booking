@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Icon from '../components/Icon'
 import { Link } from 'react-router-dom'
 const TagList = styled.ol`
-  font-size: 18px;
+  font-size: 16px;
   background: white;
   > li {
     border-bottom: 1px solid #d5d5d5;
@@ -17,7 +17,6 @@ const TagList = styled.ol`
       justify-content: space-between;
       align-items: center;
     }
-    
   }
 `
 const Button = styled.button`
@@ -35,14 +34,14 @@ const Space = styled.div`
   height: 16px;
 `
 function Tags() {
-  const { tags, setTags } = useTags()
+  const { tags } = useTags()
   return (
     <Layout>
       <TagList>
         {tags.map(tag =>
-          <li key={tag}>
+          <li key={tag.id}>
             <Link to={'/tags/' + tag}>
-              <span className="oneLine">{tag}</span>
+              <span className="oneline">{tag.name}</span>
               <Icon name="right" />
             </Link>
           </li>
