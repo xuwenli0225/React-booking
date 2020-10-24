@@ -1,14 +1,9 @@
 import { useState, useEffect } from 'react';
 import { createId } from './lib/createId'
 import { useUpdate } from 'hooks/useUpdate'
-const defaultTags = [
-  { id: createId(), name: '衣' },
-  { id: createId(), name: '食' },
-  { id: createId(), name: '住' },
-  { id: createId(), name: '行' },
-]
+
 const useTags = () => {
-  const [tags, setTags] = useState<{ id: number; name: string }[]>(defaultTags)
+  const [tags, setTags] = useState<{ id: number; name: string }[]>([])
   useEffect(() => {
     let localTags = JSON.parse(window.localStorage.getItem('tags') || '[]')
     if (localTags.length === 0) {
@@ -43,7 +38,7 @@ const useTags = () => {
   }
   const addTag = () => {
     const tagName = window.prompt('新标签的名字为：')
-    if (tagName !== null) {
+    if (tagName !== null && tagName !== '') {
       setTags([...tags, { id: createId(), name: tagName }])
     }
   }
