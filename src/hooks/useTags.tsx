@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { createId } from './lib/createId'
+import { createId } from 'lib/createId'
 import { useUpdate } from 'hooks/useUpdate'
 
 const useTags = () => {
