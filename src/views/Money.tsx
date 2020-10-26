@@ -19,6 +19,9 @@ const defaultFormData = {
   category: '-' as Category,
   amount: 0
 }
+const CategoryWrapper = styled.div`
+  background: #c4c4c4;
+`
 function Money() {
   const [selected, setSelected] = useState(defaultFormData)
   const { addRecord } = useRecords()
@@ -45,10 +48,12 @@ function Money() {
         onChange={note => onChange({ note })}
       >
       </NotesSection>
-      <CategorySection value={selected.category}
-        onChange={category => onChange({ category })}
-      >
-      </CategorySection>
+      <CategoryWrapper>
+        <CategorySection value={selected.category}
+          onChange={category => onChange({ category })}
+        >
+        </CategorySection>
+      </CategoryWrapper>
       <NumberPadSection value={selected.amount}
         onChange={amount => onChange({ amount })}
         onOk={submit}
