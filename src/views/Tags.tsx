@@ -38,7 +38,7 @@ function Tags() {
         {tags.map(tag =>
           <li key={tag.id}>
             <Link to={'/tags/' + tag.id}>
-              <span className="oneline">{tag.id}:{tag.name}</span>
+              <span className="oneline">{tag.name}</span>
               <Icon name="right" />
             </Link>
           </li>
